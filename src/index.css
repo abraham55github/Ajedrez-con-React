@@ -1,0 +1,117 @@
+:root {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #87a07b;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    min-width: 320px;
+    min-height: 100vh;
+    cursor: default;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .board {
+    width: fit-content;
+    margin: 40px auto;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .board h1 {
+    color: #eee;
+    margin-bottom: 16px;
+  }
+  
+  .game {
+    display: grid;
+    grid-template-rows: repeat(8, 50px);
+    grid-template-columns: repeat(8, 50px);
+    gap: 2px;
+  }
+  
+  .square {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+  }
+  
+  .square.valid-move {
+    background-color: lightgoldenrodyellow;
+    cursor: pointer;
+    
+  }
+  
+  .white {
+    background-color: lightgray;
+  }
+  
+  .black {
+    background-color: darkgray;
+  }
+  
+  .chess-piece {
+    font-size: 36px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    background-color: transparent;
+    transition: transform 0.2s ease;
+  }
+  
+  .selected{
+    font-size: 50px;
+  }
+  
+  .chess-piece.black {
+    color: black;
+  }
+  
+  .chess-piece.white {
+    color: white;
+  }
+  
+  .chess-piece.interactive {
+    cursor: pointer;
+    transform: scale(1.1); /* Resalta la pieza cuando el cursor está sobre ella */
+  }
+  
+  .square.is-selected {
+    color: #fff;
+    background: #09f;
+  }
+  
+  .turn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+    width: fit-content;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
