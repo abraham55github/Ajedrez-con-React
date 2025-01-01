@@ -19,7 +19,7 @@ export function GameProvider({ children }) {
 
   const handleSquareClick = (row, col) => {
     const cell = board[row][col];
-    if (!cell || !cell.color !== turn) {
+    if (!cell || cell.color !== turn) {
       setValidMoves([]);
       return;
     }
@@ -73,5 +73,7 @@ export function GameProvider({ children }) {
   )
 }
 
+
+export const useGame = () => useContext(GameContext);
 
 
