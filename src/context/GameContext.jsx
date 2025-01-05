@@ -26,10 +26,36 @@ export function GameProvider({ children }) {
 
     setSelectedPiece({ row, col })
 
+    let pieceType = null;
+
+    // Aquí hacemos la comparación entre el símbolo de la pieza y el tipo
+    switch (cell.type) {
+      case "♟":
+        pieceType = "pawn";
+        break;
+      case "♜":
+        pieceType = "rook";
+        break;
+      case "♞":
+        pieceType = "knight";
+        break;
+      case "♝":
+        pieceType = "bishop";
+        break;
+      case "♛":
+        pieceType = "queen";
+        break;
+      case "♚":
+        pieceType = "king";
+        break;
+      default:
+        break;
+    }
+  
 
 
+    const rule = pieceType ? movementRules[pieceType] : null;
 
-    const rule = movementRules[cell.type === "♟" ? "pawn" : null];
     console.log(rule)
     if (rule) {
       const moves = rule([row, col], board, cell.color);
