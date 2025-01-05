@@ -26,13 +26,18 @@ export function GameProvider({ children }) {
 
     setSelectedPiece({ row, col })
 
+
+
+
     const rule = movementRules[cell.type === "♟" ? "pawn" : null];
+    console.log(rule)
     if (rule) {
       const moves = rule([row, col], board, cell.color);
       setValidMoves(moves)
     } else {
       setValidMoves([]);
     }
+
 
   }
 
